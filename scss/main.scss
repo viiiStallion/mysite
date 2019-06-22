@@ -1,5 +1,6 @@
 // Imports
 @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('menu.scss');
 
 // Variables
 $primary_color: #fff;
@@ -105,5 +106,21 @@ main {
     h1 {
       margin-top: 20vh;
     }
+  }
+}
+
+.menu_btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn_line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #3d3d3d;
   }
 }
