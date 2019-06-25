@@ -32,4 +32,17 @@ function toggleMenu() {
 }
 
 // Dark Mode
-const darkModeBtn = document.querySelector('.dark');
+const darkModeBtn = document.querySelector('.dark_mode');
+
+// Initial dark state
+let darkMode = false;
+
+darkModeBtn.addEventListener('click', toggleDarkMode);
+
+function toggleDarkMode() {
+    if(!darkMode) {
+
+    } else {
+        
+    }
+}
