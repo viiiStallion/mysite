@@ -30,3 +30,6 @@ function toggleMenu() {
         showMenu = false;
     }
 }
+
+// Dark Mode
+const darkModeBtn = document.querySelector('.dark');

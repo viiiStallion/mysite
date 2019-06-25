@@ -9,7 +9,7 @@ $secondary_color: #ff8832;
 $text_color: #3d3d3d;
 $show_home_image: true;
 $home_image: url('../img/Italy.jpg');
-$background_opacity: 0.9;
+$background_opacity: 0.8;
 
 // Mixins
 @mixin easeOut {
@@ -88,7 +88,7 @@ h3 {
   &.sm_heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(darken($primary_color, 2), 0.75);
+    background: rgba(darken($primary_color, 2), 0.65);
   }
 }
 
@@ -256,7 +256,7 @@ main {
 }
 
 // Delay each nav item slide by 0.1s
-@for $x from 1 through 5 {
+@for $x from 1 through 6 {
   .nav_item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
   }
@@ -316,5 +316,23 @@ main {
 @include mediaSm {
   main#home h1 {
     margin-top: 10vh;
+  }
+}
+
+// Buttons
+.btn {
+  background: $text_color;
+  font-size: 20px;
+  color: $primary_color;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+
+  &:hover {
+    @include easeOut;
+    background: #ff8832;
+    cursor: pointer;
   }
 }
