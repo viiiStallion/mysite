@@ -6,7 +6,7 @@
 // Variables
 $primary_color: #fff;
 $secondary_color: #ff8832;
-$text_color: #3d3d3d;
+$text_color: #444;
 $show_home_image: true;
 $home_image: url('../img/Italy.jpg');
 $background_opacity: 0.8;
@@ -58,6 +58,17 @@ $background_opacity: 0.8;
     @content;
   }
 }
+
+// Functions
+
+/*@function set_text_color($color) {
+  @if (lightness($color) > 40) {
+    @return #444;
+  } @else {
+    @return #fff;
+  }
+}*/
+
 // Properties
 * {
   box-sizing: border-box;
@@ -108,7 +119,8 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  // height: 100%;
+  min-height: calc(100vh - 60px);
 
   .icons {
     margin-top: 1rem;
@@ -145,7 +157,8 @@ main {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #3d3d3d;
+    background: $text_color;
+    @include easeOut();
   }
 
   //Rotate Into X With Menu Lines
@@ -219,7 +232,7 @@ main {
     .portrait {
       width: 250px;
       height: 250px;
-      background: #3d3d3d;
+      background: url('../img/portrait.jpg');
       border-radius: 50%;
       border: solid 3px $secondary_color;
     }
@@ -261,6 +274,44 @@ main {
   .nav_item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
   }
+}
+
+// About Page
+
+.about_info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    'bioimage bio bio'
+    'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio_image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary_color 3px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+  }
+
+  .job_1 {
+    grid-area: job1;
+  }
+
+  .job {
+    background: darken($primary_color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary_color 5px solid;
+  }
+}
+
+#main_footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary_color, 10);
 }
 
 // Responsiveness
@@ -308,7 +359,19 @@ main {
     .portrait {
       width: 150px;
       height: 150px;
+      background: url('../img/portrait_small.jpg');
     }
+  }
+
+  .about_info {
+    grid-template-areas:
+      'bioimage'
+      'bio'
+      'job1'
+      'job2'
+      'job3';
+
+    grid-template-columns: 1fr;
   }
 }
 
@@ -317,25 +380,4 @@ main {
   main#home h1 {
     margin-top: 10vh;
   }
-}
-
-// About Page
-
-.about {
-  margin: 2rem;
-  padding: 2rem 1rem;
-  overflow: hidden;
-
-  .paragraph_text {
-    line-height: 2;
-    font-size: 28;
-  }
-}
-
-.about_img {
-  width: 300px;
-  height: 300px;
-  background: $text_color;
-  border: solid 5px $secondary_color;
-  border-radius: 50%;
 }
