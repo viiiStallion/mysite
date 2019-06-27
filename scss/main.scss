@@ -11,7 +11,7 @@ $secondary_color: #fe7134;
 $text_color: #fff;
 $show_home_image: true;
 $home_image: url('../img/Italy.jpg');
-$background_opacity: 0.8;
+$background_opacity: 0.9;
 
 // Mixins
 @mixin easeOut {
@@ -331,7 +331,7 @@ main {
 // Button Styles
 
 .btn {
-  display: inline-block;
+  display: block;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem;
@@ -339,6 +339,7 @@ main {
   &:hover {
     background: $secondary_color;
     color: #fff;
+    @include easeOut;
   }
 }
 
@@ -349,6 +350,7 @@ main {
 
 .btn_light {
   @extend .btn;
+  background: $primary_color_light;
 }
 
 #main_footer {
