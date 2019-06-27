@@ -4,9 +4,11 @@
 @import url('mobile');
 
 // Variables
-$primary_color: #fff;
-$secondary_color: #ff8832;
-$text_color: #444;
+$primary_color: #2c394b;
+$primary_color_dark: #212d3d;
+$primary_color_light: #3b4a5e;
+$secondary_color: #fe7134;
+$text_color: #fff;
 $show_home_image: true;
 $home_image: url('../img/Italy.jpg');
 $background_opacity: 0.8;
@@ -99,7 +101,7 @@ h3 {
   &.sm_heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(darken($primary_color, 2), 0.65);
+    background: rgba($primary_color_dark, 0.65);
   }
 }
 
@@ -209,7 +211,7 @@ main {
   &_nav {
     margin: 0;
     padding: 0;
-    background: darken($primary_color, 5);
+    background: $primary_color_dark;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     @include easeOut;
@@ -302,16 +304,57 @@ main {
   }
 
   .job {
-    background: darken($primary_color, 5);
+    background: $primary_color_dark;
     padding: 0.5rem;
     border-bottom: $secondary_color 5px solid;
   }
 }
 
+// Projects
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+  img {
+    width: 100%;
+    border: 3px $text_color solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary_color;
+      @include easeOut;
+    }
+  }
+}
+
+// Button Styles
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary_color;
+    color: #fff;
+  }
+}
+
+.btn_dark {
+  @extend .btn;
+  background: $primary_color_dark;
+}
+
+.btn_light {
+  @extend .btn;
+}
+
 #main_footer {
   text-align: center;
   padding: 1rem;
-  background: darken($primary_color, 10);
+  background: darken($primary_color_dark, 5);
 }
 
 // Responsiveness
