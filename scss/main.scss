@@ -318,3 +318,24 @@ main {
     margin-top: 10vh;
   }
 }
+
+// About Page
+
+.about {
+  margin: 2rem;
+  padding: 2rem 1rem;
+  overflow: hidden;
+
+  .paragraph_text {
+    line-height: 2;
+    font-size: 28;
+  }
+}
+
+.about_img {
+  width: 300px;
+  height: 300px;
+  background: $text_color;
+  border: solid 5px $secondary_color;
+  border-radius: 50%;
+}
