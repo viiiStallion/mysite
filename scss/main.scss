@@ -344,6 +344,23 @@ main {
   background: $primary_color_light;
 }
 
+.btn_submit {
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  text-align: center;
+  background: $primary_color_dark;
+  color: $text_color;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+
+  &:hover {
+    background: $secondary_color;
+    @include easeOut;
+    cursor: pointer;
+  }
+}
+
 // Contact
 
 .contact_socials {
@@ -393,6 +410,7 @@ input[type='text'] {
   width: 100%;
   height: 30px;
   color: $secondary_color;
+  font-family: 'Oswald', sans-serif;
 
   &:focus {
     background: $primary_color_light;
@@ -402,6 +420,7 @@ input[type='text'] {
 textarea {
   @extend input[type='text'];
   height: 120px;
+  font-family: 'Oswald', sans-serif;
 }
 
 ::placeholder {
@@ -410,6 +429,7 @@ textarea {
 
 .email {
   display: grid;
+  padding-top: 3vh;
   margin: auto;
   width: 65%;
   grid-gap: 30px;
@@ -517,6 +537,16 @@ textarea {
       'socialtext'
       'btn1'
       'btn2';
+
+    grid-template-columns: 1fr;
+  }
+
+  .email {
+    grid-template-areas:
+      'name'
+      'email'
+      'subject'
+      'message';
 
     grid-template-columns: 1fr;
   }
