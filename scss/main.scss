@@ -61,16 +61,6 @@ $background_opacity: 0.9;
   }
 }
 
-// Functions
-
-/*@function set_text_color($color) {
-  @if (lightness($color) > 40) {
-    @return #444;
-  } @else {
-    @return #fff;
-  }
-}*/
-
 // Properties
 * {
   box-sizing: border-box;
@@ -361,12 +351,19 @@ main {
   grid-gap: 30px;
   grid-template-areas:
     'socialtext socialtext'
-    'btn1 btn2';
+    'btn1 btn2'
+    'email email'
+    'btn3 btn3';
   grid-template-columns: repeat(2, 1fr);
 
   .social_text {
     margin: auto;
     grid-area: socialtext;
+  }
+
+  .email_text {
+    margin: auto;
+    grid-area: email;
   }
 
   .btn1 {
@@ -379,6 +376,26 @@ main {
     margin: auto;
     grid-area: btn2;
     width: 75%;
+  }
+
+  .btn3 {
+    margin: auto;
+    grid-area: btn3;
+    width: 75%;
+  }
+}
+
+button.fs-goback {
+  padding: 0.6em 1.5em;
+  border: 3px solid #fff;
+  border-radius: 40px;
+  font-weight: 700;
+  color: #fff;
+  margin: 25px;
+
+  &:hover {
+    background: #fe7134;
+    @include easeOut;
   }
 }
 
@@ -462,7 +479,9 @@ main {
     grid-template-areas:
       'socialtext'
       'btn1'
-      'btn2';
+      'btn2'
+      'email'
+      'btn3';
 
     grid-template-columns: 1fr;
   }
