@@ -348,12 +348,12 @@ main {
 
 .contact_socials {
   display: grid;
+  width: 60%;
+  margin: auto;
   grid-gap: 30px;
   grid-template-areas:
     'socialtext socialtext'
-    'btn1 btn2'
-    'email email'
-    'btn3 btn3';
+    'btn1 btn2';
   grid-template-columns: repeat(2, 1fr);
 
   .social_text {
@@ -385,17 +385,54 @@ main {
   }
 }
 
-button.fs-goback {
-  padding: 0.6em 1.5em;
-  border: 3px solid #fff;
-  border-radius: 40px;
-  font-weight: 700;
-  color: #fff;
-  margin: 25px;
+input[type='text'] {
+  border: none;
+  background-color: $primary_color;
+  outline: 0;
+  font-size: 25px;
+  width: 100%;
+  height: 30px;
+  color: $secondary_color;
 
-  &:hover {
-    background: #fe7134;
-    @include easeOut;
+  &:focus {
+    background: $primary_color_light;
+  }
+}
+
+textarea {
+  @extend input[type='text'];
+  height: 120px;
+}
+
+::placeholder {
+  font-family: 'Oswald', sans-serif;
+}
+
+.email {
+  display: grid;
+  margin: auto;
+  width: 65%;
+  grid-gap: 30px;
+  grid-template-areas:
+    'name email'
+    'subject subject'
+    'message message';
+  grid-template-columns: repeat(2, 1fr);
+
+  .yourname {
+    grid-area: name;
+  }
+
+  .youremail {
+    grid-area: email;
+  }
+
+  .subject {
+    grid-area: subject;
+  }
+
+  .message {
+    grid-area: message;
   }
 }
 
@@ -479,9 +516,7 @@ button.fs-goback {
     grid-template-areas:
       'socialtext'
       'btn1'
-      'btn2'
-      'email'
-      'btn3';
+      'btn2';
 
     grid-template-columns: 1fr;
   }
