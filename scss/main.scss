@@ -4,11 +4,11 @@
 @import url('mobile');
 
 // Variables
-$primary_color: #2c394b;
-$primary_color_dark: #212d3d;
-$primary_color_light: #3b4a5e;
-$secondary_color: #fe7134;
-$text_color: #fff;
+$primary_color: #dfdfdf;
+$primary_color_dark: darken($primary_color, 10);
+$primary_color_light: lighten($primary_color, 10);
+$secondary_color: #ff512f;
+$text_color: rgb(31, 31, 31);
 $show_home_image: true;
 $home_image: url('../img/Italy.jpg');
 $background_opacity: 0.9;
@@ -436,7 +436,8 @@ textarea {
   grid-template-areas:
     'name email'
     'subject subject'
-    'message message';
+    'message message'
+    'null send';
   grid-template-columns: repeat(2, 1fr);
 
   .yourname {
