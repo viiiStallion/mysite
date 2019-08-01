@@ -365,13 +365,13 @@ main {
 
 .contact_socials {
   display: grid;
-  width: 60%;
+  width: 80%;
   margin: auto;
   grid-gap: 30px;
   grid-template-areas:
-    'socialtext socialtext'
-    'btn1 btn2';
-  grid-template-columns: repeat(2, 1fr);
+    'socialtext socialtext socialtext'
+    'btn1 btn2 btn3';
+  grid-template-columns: repeat(3, 1fr);
 
   .social_text {
     margin: auto;
